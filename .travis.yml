@@ -11,8 +11,9 @@ before_install:
   - sudo mv arduino-$IDE_VERSION /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
   - rm arduino-$IDE_VERSION-linux64.tar.xz
-#install:
-# - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
+  
+install:
+  - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 
 script:
   - "cd /usr/local/share/arduino"
