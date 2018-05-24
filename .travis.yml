@@ -10,7 +10,7 @@ before_install:
   - wget http://downloads.arduino.cc/arduino-$IDE_VERSION-linux64.tar.xz
   - tar xf arduino-$IDE_VERSION-linux64.tar.xz #Extracting Arduino IDE
   - sudo mv arduino-$IDE_VERSION ARDUINO_IDE
-  - sudo ln -s ARDUINO_IDE /usr/local/bin/arduino
+  - sudo ln -s ARDUINO_IDE/arduino /usr/local/bin/arduino
 #install:
 # - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 
