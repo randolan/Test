@@ -16,6 +16,10 @@ install:
   - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 
 script:
+  - "ls $HOME"
+  - "ls $PWD"
+  - "ls /usr/local"
+  - "ls /usr/local/share"
   - "cd /usr/local/share/arduino"
   - arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
 
