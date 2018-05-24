@@ -3,8 +3,7 @@ language: c
 env:
   global:
     - IDE_VERSION=1.8.5
-   # - ARDUINO_IDE = /usr/local/share/arduino
-   
+
 before_install:
   - echo "Downloading version $IDE_VERSION of the Arduino IDE ..."
   - wget http://downloads.arduino.cc/arduino-$IDE_VERSION-linux64.tar.xz
