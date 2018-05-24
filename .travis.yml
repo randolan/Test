@@ -3,24 +3,24 @@ language: c
 env:
   global:
     - IDE_VERSION=1.8.5
- #   - APPLICATION-FOLDER="$HOME/arduino-ide"
+    - APPLICATION-FOLDER="$HOME/arduino-ide"
    
 before_install:
   - echo "Dwoloading verson $IDE_VERSION of the Arduino IDE ..."
   - wget http://downloads.arduino.cc/arduino-$IDE_VERSION-linux64.tar.xz
   - tar xf arduino-$IDE_VERSION-linux64.tar.xz #Extracting Arduino IDE
-  - sudo mv arduino-$IDE_VERSION $HOME/arduino-ide
- # - sudo ln -s APPLICATION-FOLDER/arduino /usr/local/bin/arduino
+  - sudo mv arduino-$IDE_VERSION APPLICATION-FOLDER
+#  - sudo ln -s APPLICATION-FOLDER/arduino APPLICATION-FOLDER
 #install:
 # - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 
 script:
   - "echo $HOME"
   - "ls $HOME"
-  - "cd $HOME/bin"
-  - "ls $PWD"
-  - "echo $PWD"
-  - "ls $PWD"
+  - "ls /usr/local/bin"
+#  - "ls $PWD"
+#- "echo $PWD"
+#  - "ls $PWD"
   - "cd $HOME/arduino-ide"
   - "ls $PWD"
   -  arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
