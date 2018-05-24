@@ -15,10 +15,10 @@ before_install:
 # - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 
 script:
+  - "echo $HOME"
+  - "ls $HOME"
   - "echo $PWD"
   - "ls $PWD"
-  - "echo $APPLICATION_FOLDER"
-  - "ls $APPLICATION_FOLDER"
   - "cd $APPLICATION_FOLDER"
   -  arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
 
