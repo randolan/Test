@@ -17,7 +17,7 @@ install:
 
 script:
   - "ls -a $HOME"
-  - "ls $HOME/.arduino15"
+  - "ls -a $HOME/.arduino15"
   - "cd /usr/local/share/arduino"
   - arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
 
