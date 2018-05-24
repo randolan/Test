@@ -14,10 +14,11 @@ before_install:
 
 script:
   - "echo $HOME"
-  - "ls $HOME"
+  - "ls -a $HOME"
   - "echo $PWD"
   - "ls $PWD"
   - "cd $HOME/arduino-ide"
+  - "ls $PWD"
   -  arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
 
 notifications:
