@@ -18,9 +18,9 @@ script:
   - "echo $PWD"
   - "ls $PWD"
   - "ls /usr/local/bin"
-  - "cd /usr/local/share/arduinoE"
+  - "cd /usr/local/share/arduino"
   - "ls $PWD""
-  -  arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
+  - arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
 
 notifications:
   email:
