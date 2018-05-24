@@ -10,15 +10,11 @@ before_install:
   - tar xf arduino-$IDE_VERSION-linux64.tar.xz #Extracting Arduino IDE
   - sudo mv arduino-$IDE_VERSION /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+  - rm arduino-$IDE_VERSION-linux64.tar.xz
 #install:
 # - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 
 script:
-  - "echo $PWD"
-  - "ls $PWD"
-  - "ls /usr/local/bin"
-  - "cd /usr/local/share/arduino"
-  - "ls $PWD"
   - arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
 
 notifications:
