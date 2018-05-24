@@ -13,7 +13,8 @@ before_install:
   - rm arduino-$IDE_VERSION-linux64.tar.xz
   
 install:
-  - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
+  - arduino --save-prefs --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
+  - arduino --install-boards STM32:stm32
 
 script:
   - "ls -a $HOME"
