@@ -6,21 +6,22 @@ env:
     - APPLICATION_FOLDER="/usr/local/share/arduino"
    
 before_install:
-  - echo "Dwoloading verson $IDE_VERSION of the Arduino IDE ..."
+  - echo "Downloading version $IDE_VERSION of the Arduino IDE ..."
   - wget http://downloads.arduino.cc/arduino-$IDE_VERSION-linux64.tar.xz
   - tar xf arduino-$IDE_VERSION-linux64.tar.xz #Extracting Arduino IDE
-  - sudo mv arduino-$IDE_VERSION /usr/local/share/arduino
-  - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
+  - sudo mv arduino-$IDE_VERSION $HOME/arduino-ide
+  - rm arduino-$IDE_VERSION-linux64.tar.xz
 #install:
 # - arduino --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 
 script:
   - "echo $PWD"
   - "ls $PWD"
-  - "echo $APPLICATION_FOLDER"
-  - "ls $APPLICATION_FOLDER"
-  - "cd $APPLICATION_FOLDER"
+  - "echo "$HOME"
+  - "cd $HOME/arduino-ide"
   -  arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
+  -  arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Fade/Fade.ino
+
 
 notifications:
   email:
