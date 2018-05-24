@@ -17,8 +17,10 @@ before_install:
 script:
   - "echo $PWD"
   - "ls $PWD"
+  - "ls /usr/local/bin"
   - "cd ARDUINO_IDE"
   - "ls $PWD"
+  - "ls /usr/local/share/arduino"
   -  arduino --verify --board arduino:avr:uno $PWD/examples/01.Basics/Blink/Blink.ino
 
 notifications:
