@@ -17,8 +17,8 @@ install:
   - arduino --install-boards STM32:stm32
 
 script:
-  - "cd /usr/local/share/arduino"
-  - python testlinux.py
+  - "cd pwd"
+  - python ./testlinux.py
 
 notifications:
   email:
