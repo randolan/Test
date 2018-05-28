@@ -17,8 +17,7 @@ install:
   - arduino --install-boards STM32:stm32
 
 script:
-  - "ls $PWD"
-  - "cd "$HOME"
+  - "ls -a $HOME"
   - python testlinux.py
 
 notifications:
