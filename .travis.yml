@@ -18,8 +18,12 @@ install:
 
 script:
   - "ls -a $HOME"
-  - python testlinux.py
-
+  - "ls -a $HOME/Arduino"
+  - "ls $HOME/.arduino15"
+  - "ls $HOME/.arduino15/packages/STM32/hardware/stm32/1.2.0"
+  - "ls /usr/local/share/arduino/arduino"
+  - arduino --board STM32:stm32:Nucleo_144:pnum=NUCLEO_F429ZI --verify $PWD/examples/01.Basics/Blink/Blink.ino
+ 
 notifications:
   email:
     on_success: change
