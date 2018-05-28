@@ -13,10 +13,10 @@ import tempfile
 import argparse
 
 tempdir=tempfile.gettempdir()
-arduino_path ='/local/randolpa/Arduino/arduino-1.8.5/'
-arduino_packages = '/local/randolpa/Arduino/arduino-1.8.5/portable/packages'
+arduino_path ='/usr/local/share/arduino'
+arduino_packages = '$HOME/.arduino15/packages'
 build_output_dir= tempdir+'/temp_arduinoBuilderOutput'
-output_dir='/local/randolpa/Arduino/arduinoBuilderOutput'
+output_dir='$HOME/Tempor/arduinoBuilderOutput'
 
 #Common path
 arduino_builder = os.path.join(arduino_path, 'arduino-builder')
