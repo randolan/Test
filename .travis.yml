@@ -18,8 +18,7 @@ install:
 
 script:
   - "ls $PWD"
-  - arduino --board STM32:stm32:Nucleo_144:pnum=NUCLEO_F429ZI --verify $PWD/examples/01.Basics/Blink/Blink.ino
-  - python testpython.py
+  - python testlinux.py
  
 notifications:
   email:
