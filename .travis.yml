@@ -23,7 +23,9 @@ install:
 
 script:
   - "ls $PWD"
-  - python testlinux.py
+  - "ls $HOME"
+  - "ls $HOME/.arduino15/packages"
+ # - python testlinux.py
  
 notifications:
   email:
