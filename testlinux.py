@@ -162,18 +162,7 @@ def bin_copy(board_name,sketch_name):
     except OSError as e:
         print("Impossible to copy the binary from the arduino builder output: ",e.strerror)
         raise
-
-#Create the output file --> Ongoing improvment
-def create_output_file():
-    filename = os.path.join(output_dir,time.strftime("Result_file_%Y-%m-%d.txt"))
-    with open(filename, "w") as file:
-        file.write(' ************************************** \n')
-        file.write(' *********** OUTPUT / RESULT ********** \n')
-        file.write(' ************************************** \n')
-        file.write(time.strftime(" %A %d %B %Y %H:%M:%S "))
-        file.write('\n Full path = {} \n'.format(os.path.abspath(output_dir)))
-    return filename
-
+        
 #Automatic run
 def run_auto(sketch_list,board_list):
     file=create_output_file()
