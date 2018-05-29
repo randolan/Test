@@ -1,9 +1,6 @@
 language: python
 python:
-  - "2.6"
   - "2.7"
-  - "3.4"
-  - "3.5"
   - "3.6"
 env:
   global:
@@ -23,7 +20,7 @@ install:
 
 script:
   - "ls $PWD"
-  - "ls $HOME"
+  - "ls /home/travis"
   - "ls $HOME/.arduino15/packages"
  # - python testlinux.py
  
