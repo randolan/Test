@@ -14,9 +14,9 @@ import argparse
 
 tempdir=tempfile.gettempdir()
 arduino_path ='/usr/local/share/arduino'
-arduino_packages = '$HOME/.arduino15/packages'
+arduino_packages = '/home/travis/.arduino15/packages'
 build_output_dir= tempdir+'/temp_arduinoBuilderOutput'
-output_dir='$HOME/Tempor/arduinoBuilderOutput'
+output_dir=' /home/travis/Arduino/Tempor/arduinoBuilderOutput'
 
 #Common path
 arduino_builder = os.path.join(arduino_path, 'arduino-builder')
