@@ -17,6 +17,8 @@ before_install:
 install:
   - arduino --save-prefs --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
   - arduino --install-boards STM32:stm32
+  - rm -r /home/travis/.arduino15/packages/STM32/hardware/stm32/
+  - git clone https://github.com/angela-rph/Arduino_Core_STM32.git /home/travis/.arduino15/packages/STM32/hardware/stm32/1.2.0
 
 script:
   - python testlinux.py
