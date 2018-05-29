@@ -64,15 +64,3 @@ For advanced user, you can use the repository: see the [Using git repository](ht
     * [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
     * [B-L475E-IOT01A](http://www.st.com/en/evaluation-tools/b-l475e-iot01a.html)
 
-### Next release
-
-
-## Troubleshooting
-
-If you have any issue, you could [file an issue on Github](https://github.com/stm32duino/Arduino_Core_STM32/issues/new).
-
-Or submit a topic on the [stm32duino forum](http://stm32duino.com):
-
- * questions on the [STM32 Core](http://stm32duino.com/viewforum.php?f=48)
-
- * bugs/enhancements on the [STM core: Bugs and enhancements](http://stm32duino.com/viewforum.php?f=49)
