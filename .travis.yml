@@ -19,9 +19,7 @@ install:
   - arduino --install-boards STM32:stm32
 
 script:
-  - "ls $PWD"
-  - "ls -a /home/travis"
- # - python testlinux.py
+  - python testlinux.py
  
 notifications:
   email:
