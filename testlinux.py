@@ -165,7 +165,6 @@ def bin_copy(board_name,sketch_name):
         
 #Automatic run
 def run_auto(sketch_list,board_list):
-    file=create_output_file()
     current_sketch=0
     for files in sketch_list:
         boardOk = []
@@ -187,13 +186,6 @@ def run_auto(sketch_list,board_list):
             if status == 1:
                 boardKo.append(board)
             check_status(status,board_name,sketch_name)
-        with open(file,"a") as f:
-            f.write("\n Sketch : "+ sketch_name)
-            f.write("\n Sketch location : "+ files)
-            f.write("\n Build PASSED for these boards : " + str(boardOk))
-            f.write("\n Total build PASSED for this sketch : {} / {} ".format(len(boardOk),len(board_list)))
-            f.write("\n Build FAILED for these boards : " + str(boardKo))
-            f.write("\n Total build FAILED for this sketch : {} / {} \n".format(len(boardKo),len(board_list)))
     print("\n****************** PROCESSING COMPLETED ******************")
     print("PASSED = {}/{}".format(nb_build_passed,nb_build_total))
     print("FAILED = {}/{}".format(nb_build_failed,nb_build_total))
