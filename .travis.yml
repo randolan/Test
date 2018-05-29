@@ -20,8 +20,7 @@ install:
 
 script:
   - "ls $PWD"
-  - "ls /home/travis"
-  - "ls $HOME/.arduino15/packages"
+  - "ls -a /home/travis"
  # - python testlinux.py
  
 notifications:
