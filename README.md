@@ -1,4 +1,4 @@
- stm32_tools
+# stm32_tools
 Useful tools for stm32
 
 ## arduino-builder.py 
@@ -6,14 +6,16 @@ Used to build sketch(es) thanks Arduino builder for all [Arduino_Core_STM32](htt
 
 **Configure:** 
 
-Every time you run this script, it will create a config.json file in build path with default path.
+Once you run this script, a _config.json_ file containing default operating system-dependent paths, will be automatically created in the working directory. Set this file to configure your arduino builder environment. 
+```
+ARDUINO_PATH : <arduino IDE installation folder> Path to Arduino installation folder.
 
-`ARDUINO_PACKAGES : <arduino packages path> Path to folder containing Arduino packages.`
+ARDUINO_PACKAGES : <arduino packages path> Path to folder containing Arduino packages.
 
-`BUILD_OUTPUT_DIR : <build output directory path> Path to temporary folder where compiled files are stored.`
+BUILD_OUTPUT_DIR : <build output directory path> Path to temporary folder where compiled files are stored.
 
-`ROOT_OUTPUT_DIR : <root ouput directory path> Path to folder where log files are saved.`
-
+ROOT_OUTPUT_DIR : <root ouput directory path> Path to folder where log files are saved.
+```
 **Examples:** 
   * To build all ino file found in _examples_ and  _libraries_ directories:
   
@@ -41,6 +43,38 @@ will build all sketch listed in sketches_list.txt
 
 will build sketch for all variants name including **F4**.
 
+_Note : 
+Blink sketch is build by default for all variants. To build other sketch you can use previous options. Be aware that with -all and --file options, exclude list will be automatically used if present._
+
+**Usage:**
+```
+-h
+usage: arduino-builder.py [-h] [-a] [-b BOARD] [-c]
+                          [-i INO | -f FILE | -s SKETCHES] [-e EXCLUDE] [-v]
+
+Automatic build script
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -a, --all             -a : automatic build - build all sketches for all
+                        board
+  -b BOARD, --board BOARD
+                        -b <board pattern>: pattern to find one or more boards
+                        to build
+  -c, --clean           -c: clean output directory by deleting
+                        C:\Users\randolpa\arduinoBuilderOutput folder
+  -i INO, --ino INO     -i <ino filepath>: single ino file to build
+  -f FILE, --file FILE  -f <sketches list file>: file containing list of
+                        sketches to build
+  -s SKETCHES, --sketches SKETCHES
+                        -s <sketch pattern>: pattern to find one or more
+                        sketch to build
+  -e EXCLUDE, --exclude EXCLUDE
+                        -e <exclude list file>: file containing pattern of
+                        sketches to ignore | Default path : <working
+                        directory>\conf\exclude_list.txt
+  -v, --verbose         -v : enable arduino-builder verbose mode
+```
 ## [deprecated] arduino-builder-cli.sh (linux)
 Used to build sketch(es) thanks Arduino CLI for all [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32) variants.
 
