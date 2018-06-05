@@ -1,12 +1,52 @@
-# stm32_tools
+ stm32_tools
 Useful tools for stm32
 
-## arduino-builder.py (linux)
+## arduino-builder.py 
 Used to build sketch(es) thanks Arduino builder for all [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32) variants.
+
+**Configure:** 
+
+Every time you run this script, it will create a config.json file in build path with default path.
+
+`ARDUINO_PACKAGES : <arduino packages path> Path to folder containing Arduino packages.`
+
+`BUILD_OUTPUT_DIR : <build output directory path> Path to temporary folder where compiled files are stored.`
+
+`ROOT_OUTPUT_DIR : <root ouput directory path> Path to folder where log files are saved.`
+
+**Examples:** 
+  * To build all ino file found in _examples_ and  _libraries_ directories:
+  
+_Note: exclude_list.txt is used to filter sketches found._
+  
+`./arduino-builder.py -a`
+  * To build a specific ino _\<path to my ino file\>/mysketch.ino_:
+  
+`./arduino-builder.py -i /tmp/SerialLoop.ino`
+  * To build a specific set of sketch using a pattern:
+  
+`./arduino-builder.py -s "08\.|09\."`
+
+will build all sketch in _examples/09.USB_ and _examples/08.Strings_ directories
+* To build a specific list of sketch:
+
+_Note : list of sketches to build must be define in sketches_list.txt_
+  
+`./arduino-builder.py -f : <sketches list file>`
+
+will build all sketch listed in sketches_list.txt
+  * To build a specific set of boards using a pattern:
+  
+`./arduino-builder.py -b "F4"`
+
+will build sketch for all variants name including **F4**.
+
+## [deprecated] arduino-builder-cli.sh (linux)
+Used to build sketch(es) thanks Arduino CLI for all [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32) variants.
 
 Launch this script at the top of Arduino IDE directory.
 
-**Examples:** 
+**Examples:**
   * To build all ino file found in _examples_ and  _libraries_ directories:
   
 _Note: exclude_list.txt is used to filter sketches found._
@@ -20,7 +60,7 @@ _Note: exclude_list.txt is used to filter sketches found._
 `./arduino-builder-cli.sh -s "08\.|09\."`
 
 will build all sketch in _examples/09.USB_ and _examples/08.Strings_ directories
-  * To build a specific set of of boards using a pattern:
+  * To build a specific set of boards using a pattern:
   
 `./arduino-builder-cli.sh -b "F4"`
 
