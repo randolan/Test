@@ -122,33 +122,31 @@ def find_inos():
     return sorted(inoList)
 
 #Return a list of all board types and names using the board.txt file
-def find_board(args):
-    boardlist=[]
+def find_board():
     for path in [arduino_packages, hardware_path]:
         for root, dirs, files in os.walk(path, followlinks=True):
             for file in files:
-                if fnmatch.fnmatch(file, 'boards.txt'):
-                    if os.path.getsize(os.path.join(root,file)) != 0 :
-                        with open(os.path.join(root,file),'r') as f:
-                            regex="(.+)\.menu\.pnum\.([^\.]+)="
+                if fnmatch.fnmatch(file, "boards.txt"):
+                    if os.path.getsize(os.path.join(root, file)) != 0:
+                        with open(os.path.join(root, file), "r") as f:
+                            regex = "(.+)\.menu\.pnum\.([^\.]+)="
                             for line in f.readlines():
-                                x=re.match(regex,line)
+                                x = re.match(regex, line)
                                 if x:
                                     if args.board:
-                                        boardpattern = args.board[len(args.board)-1]
-                                        reg=".*("+boardpattern+").*"
-                                        y=re.match(reg,x.group(0),re.IGNORECASE)
+                                        reg = ".*(" + args.board + ").*"
+                                        y = re.match(reg, x.group(0), re.IGNORECASE)
                                         if y:
-                                            board_type=x.group(1)
-                                            board_name=x.group(2)
-                                            board=(board_type,board_name)
-                                            boardlist.append(board)
+                                            board_type = x.group(1)
+                                            board_name = x.group(2)
+                                            board = (board_type, board_name)
+                                            board_list.append(board)
                                     else:
-                                        board_type=x.group(1)
-                                        board_name=x.group(2)
-                                        board=(board_type,board_name)
-                                        boardlist.append(board)
-    return sorted(boardlist)
+                                        board_type = x.group(1)
+                                        board_name = x.group(2)
+                                        board = (board_type, board_name)
+                                        board_list.append(board)
+    return sorted(board_list)
 
 #Check the status
 def check_status(status,board_name,sketch_name):
