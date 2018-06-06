@@ -220,4 +220,3 @@ if len(sys.argv)<2 : #Si aucun args
     run_auto(sketches,variants)
 else:
     run_auto(sketches,variants)
-
