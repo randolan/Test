@@ -13,6 +13,8 @@ import tempfile
 import argparse
 
 tempdir=tempfile.gettempdir()
+build_id = time.strftime("_%Y-%m-%d_%H-%M-%S")
+
 arduino_path ='/usr/local/share/arduino'
 arduino_packages = '/home/travis/.arduino15/packages'
 build_output_dir= tempdir+'/temp_arduinoBuilderOutput'
