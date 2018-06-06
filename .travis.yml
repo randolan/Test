@@ -28,8 +28,3 @@ install:
 script:
   - python testlinux.py
  
-notifications:
-  email:
-    on_success: change
-    on_failure: change
-
