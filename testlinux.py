@@ -215,7 +215,6 @@ def create_command(board, sketch_path):
 
 # Automatic run
 def build_all():
-    file = create_output_file()
     current_sketch = 0
     for files in sketch_list:
         boardOk = []
@@ -246,31 +245,6 @@ def build_all():
             if status == 1:
                 boardKo.append(board_name)
             check_status(status, board_name, sketch_name)
-        with open(file, "a") as f:
-            f.write("\nSketch : " + files)
-            if len(boardOk):
-                f.write("\nBuild PASSED for these boards :\n")
-                for b in boardOk:
-                    f.write(str(b) + "\n")
-            f.write(
-                "Total build PASSED for this sketch : {} / {}".format(
-                    len(boardOk), len(board_list)
-                )
-            )
-            if len(boardKo):
-                f.write("\nBuild FAILED for these boards :\n")
-                for b in boardKo:
-                    f.write(str(b) + "\n")
-            f.write(
-                "\nTotal build FAILED for this sketch : {} / {}\n".format(
-                    len(boardKo), len(board_list)
-                )
-            )
-    with open(file, "a") as f:
-        f.write("\n****************** PROCESSING COMPLETED ******************\n")
-        f.write("TOTAL PASSED : {} % \n".format(nb_build_passed / nb_build_total * 100))
-        f.write("TOTAL FAILED : {} % \n".format(nb_build_failed / nb_build_total * 100))
-        f.write("Logs are available here: " + output_dir)
     print("\n****************** PROCESSING COMPLETED ******************")
     print(
         "PASSED = {}/{} ({}%) ".format(
