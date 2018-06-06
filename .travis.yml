@@ -5,8 +5,12 @@ env:
   global:
     - IDE_VERSION=1.8.5
 
-before_install:
+cache:
+  directories:
+    - /usr/local/share/arduino
+    - /usr/local/bin/arduino
 
+before_install:
   #Install Arduino IDE
   - wget http://downloads.arduino.cc/arduino-$IDE_VERSION-linux64.tar.xz
   - tar xf arduino-$IDE_VERSION-linux64.tar.xz #Extracting Arduino IDE
@@ -29,8 +33,3 @@ notifications:
     on_success: change
     on_failure: change
 
-cache:
-  directories:
-    - $HOME/.arduino15/packages/STM32/hardware/stm32/1.2.0
-    - /usr/local/share/arduino
-    - /usr/local/bin/arduino
