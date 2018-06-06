@@ -93,7 +93,7 @@ def manage_inos():
         with open(args.file, "r") as f:
             for line in f.readlines():
                ino = line.rstrip()
-+                if os.path.exists(ino):
+               if os.path.exists(ino):
                     sketch_list.append(ino)
                 elif os.path.exists(os.path.join(arduino_path, ino)):
                     sketch_list.append(os.path.join(arduino_path, ino))
