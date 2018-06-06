@@ -12,6 +12,7 @@ import getpass
 import tempfile
 import argparse
 
+ls -a '/home/travis/'
 tempdir=tempfile.gettempdir()
 arduino_path ='/usr/local/share/arduino'
 arduino_packages = '/home/travis/.arduino15/packages'
