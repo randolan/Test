@@ -94,11 +94,11 @@ def manage_inos():
             for line in f.readlines():
                ino = line.rstrip()
                if os.path.exists(ino):
-                    sketch_list.append(ino)
-                elif os.path.exists(os.path.join(arduino_path, ino)):
-                    sketch_list.append(os.path.join(arduino_path, ino))
-                else:
-                    print("Ignore %s as does not exist." % ino)
+                   sketch_list.append(ino)
+               elif os.path.exists(os.path.join(arduino_path, ino)):
+                   sketch_list.append(os.path.join(arduino_path, ino))
+               else:
+                   print("Ignore %s as does not exist." % ino)
     # Defailt ino to build
     else:
         sketch_list = [sketch_default]
