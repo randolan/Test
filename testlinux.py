@@ -17,7 +17,7 @@ arduino_path ='/usr/local/share/arduino'
 arduino_packages = '/home/travis/.arduino15/packages'
 build_output_dir= tempdir+'/temp_arduinoBuilderOutput'
 output_dir=' /home/travis/Arduino/Tempor/arduinoBuilderOutput'
-sketchbook_path = '/home/travis/Documents/Arduino'
+sketchbook_path = '/home/travis/Arduino'
 
 assert os.path.exists(arduino_path), (
     "Path does not exist: %s . Please set this path in the json config file"
