@@ -6,24 +6,31 @@ env:
     - IDE_VERSION=1.8.5
 
 before_install:
-  - echo "Downloading version $IDE_VERSION of the Arduino IDE ..."
+
+  #Install Arduino IDE
   - wget http://downloads.arduino.cc/arduino-$IDE_VERSION-linux64.tar.xz
   - tar xf arduino-$IDE_VERSION-linux64.tar.xz #Extracting Arduino IDE
-  - sudo mv arduino-$IDE_VERSION /usr/local/share/arduino
-  - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
-  - rm arduino-$IDE_VERSION-linux64.tar.xz
+  - sudo mv arduino-$IDE_VERSION /usr/local/share/arduino #Move Arduino IDE folder 
+  - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino #Link
+  - rm arduino-$IDE_VERSION-linux64.tar.xz #Remove tar folder
   
 install:
+  #Install STM32duino Core
   - arduino --save-prefs --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
   - arduino --install-boards STM32:stm32
   - rm -r /home/travis/.arduino15/packages/STM32/hardware/stm32/
   - git clone https://github.com/angela-rph/Arduino_Core_STM32.git /home/travis/.arduino15/packages/STM32/hardware/stm32/1.2.0
 
 script:
-  - "ls -a $HOME"
   - python testlinux.py
  
 notifications:
   email:
     on_success: change
     on_failure: change
+
+cache:
+  directories:
+    - $HOME/.arduino15/packages/STM32/hardware/stm32/1.2.0
+    - /usr/local/share/arduino
+    - /usr/local/bin/arduino
