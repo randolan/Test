@@ -27,5 +27,7 @@ install:
   - git clone https://github.com/angela-rph/Arduino_Core_STM32.git /home/travis/.arduino15/packages/STM32/hardware/stm32/1.2.0
 
 script:
+  - "echo $PWD"
+  - "ls $PWD"
   - python testlinux.py
  
