@@ -19,10 +19,11 @@ install:
   - arduino --install-boards STM32:stm32
   - rm -r /home/travis/.arduino15/packages/STM32/hardware/stm32/1.2.0/
   - cd /home/travis/.arduino15/packages/STM32/hardware/stm32/ 
-  - sudo ln -s /home/travis/build/angela-rph/Test
+  - sudo ln -s /home/travis/build/angela-rph/Test/
 
 script:
   - "echo /home/travis/.arduino15/packages/STM32/hardware/stm32/"
   - "ls -a /home/travis/.arduino15/packages/STM32/hardware/stm32/"
+  - cd /home/travis/build/angela-rph/Test/
   - python testlinux.py -b l0
  
