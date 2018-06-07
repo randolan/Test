@@ -18,7 +18,8 @@ install:
   - arduino --save-prefs --pref "boardsmanager.additional.urls=https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
   - arduino --install-boards STM32:stm32
   - rm -r /home/travis/.arduino15/packages/STM32/hardware/stm32/1.2.0/
-  - sudo ln -s /home/travis/.arduino15/packages/STM32/hardware/stm32/ /home/travis/build/angela-rph/Test
+  - cd /home/travis/.arduino15/packages/STM32/hardware/stm32/ 
+  - sudo ln -s /home/travis/build/angela-rph/Test
 
 script:
   - "echo /home/travis/.arduino15/packages/STM32/hardware/stm32/"
