@@ -246,17 +246,15 @@ def build_all():
             check_status(status, board_name, sketch_name)
     print("\n****************** PROCESSING COMPLETED ******************")
     print(
-        "PASSED = {}/{} ({}%) ".format(
+        "PASSED = {}/{} ".format(
             nb_build_passed,
             nb_build_total,
-            round(nb_build_passed / nb_build_total * 100),
         )
     )
     print(
-        "FAILED = {}/{} ({}%) ".format(
+        "FAILED = {}/{} ".format(
             nb_build_failed,
             nb_build_total,
-            round(nb_build_failed / nb_build_total * 100),
         )
     )
     print("Logs are available here: " + output_dir)
