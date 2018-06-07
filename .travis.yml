@@ -29,5 +29,5 @@ install:
 script:
   - "echo /home/travis/.arduino15/packages/STM32/hardware/stm32/"
   - "ls -a /home/travis/.arduino15/packages/STM32/hardware/stm32/"
-  - python testlinux.py -b -l0
+  - python testlinux.py -b l0
  
