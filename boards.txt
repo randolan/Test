@@ -23,32 +23,6 @@ Nucleo_144.build.core=arduino
 Nucleo_144.build.board=Nucleo_144
 Nucleo_144.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
 
-# NUCLEO_F207ZG board
-# Support: USB HID, Serial1 (USART1 on PG9, PG14) and Serial2 (USART2 on PD6, PD5)
-Nucleo_144.menu.pnum.NUCLEO_F207ZG=Nucleo F207ZG
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.node=NODE_F207ZG
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.upload.maximum_size=1048576
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.upload.maximum_data_size=131072
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.mcu=cortex-m3
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.board=NUCLEO_F207ZG
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.series=STM32F2xx
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.product_line=STM32F207xx
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.variant=NUCLEO_F207ZG
-Nucleo_144.menu.pnum.NUCLEO_F207ZG.build.cmsis_lib_gcc=arm_cortexM3l_math
-
-# NUCLEO_F429ZI board
-# Support: USB HID, Serial1 (USART1 on PG9, PG14) and Serial2 (USART2 on PD6, PD5)
-Nucleo_144.menu.pnum.NUCLEO_F429ZI=Nucleo F429ZI
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.node=NODE_F429ZI
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.upload.maximum_size=2097152
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.upload.maximum_data_size=262144
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.build.mcu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.build.board=NUCLEO_F429ZI
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.build.series=STM32F4xx
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.build.product_line=STM32F429xx
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.build.variant=NUCLEO_F429ZI
-Nucleo_144.menu.pnum.NUCLEO_F429ZI.build.cmsis_lib_gcc=arm_cortexM4l_math
-
 # Upload menu
 Nucleo_144.menu.upload_method.MassStorage=Mass Storage
 Nucleo_144.menu.upload_method.MassStorage.upload.protocol=
