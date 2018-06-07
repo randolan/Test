@@ -5,7 +5,6 @@ import sys
 import json
 import time
 import fnmatch
-import pathlib
 import shutil
 import subprocess
 import getpass
